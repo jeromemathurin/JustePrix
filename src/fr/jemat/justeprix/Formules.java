@@ -38,18 +38,13 @@ public class Formules {
 	public static boolean QuitterLeJeu() {
 		AffichageConsole("Quitter le jeu ? Oui/Non");	
 		boolean quit = false;
-		String choixQuitter;
+		String choixQuitter = SaisieDuJoueurString();
 		
-		do {
-		choixQuitter = SaisieDuJoueurString();
-		} while (choixQuitter != "o" || choixQuitter != "O");
 		
-		if (choixQuitter == "o" || choixQuitter == "O") {
-			quit = true;
-		}
-		if (choixQuitter == "n" || choixQuitter == "O") {
+		if ( choixQuitter.length()>1) {
 			quit = false;
-		}
+		} else 
+		
 		return quit;
 	}
 	
