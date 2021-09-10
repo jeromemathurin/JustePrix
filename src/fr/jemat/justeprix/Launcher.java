@@ -2,16 +2,17 @@ package fr.jemat.justeprix;
 
 public class Launcher {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
-		Formules.AffichageConsole("Jouons au JustePrix !");
 		
-		int choixCategorieJoueur = selection.ChoixCatégorie();
 		Boolean sortie = false;
 		
-		JustePrix objetJustePrix = selection.ChoixObjet(choixCategorieJoueur);
-
+		Formules.AffichageConsole("Jouons au JustePrix !");
+		
 		while (!sortie){
+			int choixCategorieJoueur = selection.ChoixCatégorie();
+			
+			JustePrix objetJustePrix = selection.ChoixObjet(choixCategorieJoueur);
 		
 			try {
 				
@@ -52,6 +53,7 @@ public class Launcher {
 			} catch (Exception e ) {Formules.AffichageConsole("Erreur. Arret du programme.");}
 			sortie = Formules.QuitterLeJeu();
 		}
+		Formules.AffichageConsole("Game Over!");
 		System.exit(1);
 	}
 
